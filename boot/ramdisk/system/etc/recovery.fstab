@@ -1,0 +1,65 @@
+# Logical / A/B Partitions
+/product_a               ext4     /dev/block/dm-0          				flags=display=product_a;logical;slotselect
+/system_a                ext4     /dev/block/dm-1          				flags=display=system_a;logical;slotselect;avb=vbmeta_system_a
+/system_b                ext4     /dev/block/dm-2          				flags=display=system_b;logical;slotselect;avb=vbmeta_system_b
+/vendor_a                ext4     /dev/block/dm-3          				flags=display=vendor_a;logical;slotselect;avb=vbmeta_vendor_a
+/vendor_b                ext4     /dev/block/dm-4          				flags=display=vendor_b;logical;slotselect;avb=vbmeta_vendor_b
+/userdata                ext4     /dev/block/dm-34         				flags=display=userdata;formattable;resize;check
+/com.android.wifi        ext4     /dev/block/dm-14         				flags=display=com.android.wifi
+
+# Metadata
+/metadata                ext4     /dev/block/by-name/md_udc 			flags=display=metadata
+
+# Vendor secure partitions
+/mnt/vendor/protect_f    ext4     /dev/block/by-name/protect1 			flags=display=protect_f
+/mnt/vendor/protect_s    ext4     /dev/block/by-name/protect2 			flags=display=protect_s
+/mnt/vendor/nvdata       ext4     /dev/block/by-name/nvdata  			flags=display=nvdata
+/mnt/vendor/nvcfg        ext4     /dev/block/by-name/nvcfg   			flags=display=nvcfg
+/mnt/vendor/persist      ext4     /dev/block/by-name/persist 			flags=display=persist
+
+# External devices
+auto                     auto     /devices/platform/externdevice* 		flags=display=auto
+auto                     vfat     /devices/platform/mt_usb*       		flags=display=auto
+
+# Bootloader / misc
+/bootloader              emmc     /dev/block/by-name/lk        			flags=display=bootloader
+/bootloader2             emmc     /dev/block/by-name/lk2       			flags=display=bootloader2
+/misc                    emmc     /dev/block/by-name/para      			flags=display=misc
+
+# Boot / vbmeta partitions (A/B)
+/boot_a                  emmc     /dev/block/by-name/boot_a          	flags=display=boot_a;slotselect
+/boot_b                  emmc     /dev/block/by-name/boot_b          	flags=display=boot_b;slotselect
+/vendor_boot_a           emmc     /dev/block/by-name/vendor_boot_a   	flags=display=vendor_boot_a;slotselect
+/vendor_boot_b           emmc     /dev/block/by-name/vendor_boot_b   	flags=display=vendor_boot_b;slotselect
+/init_boot_a             emmc     /dev/block/by-name/init_boot_a     	flags=display=init_boot_a;slotselect
+/init_boot_b             emmc     /dev/block/by-name/init_boot_b     	flags=display=init_boot_b;slotselect
+/dtbo_a                  emmc     /dev/block/by-name/dtbo_a          	flags=display=dtbo_a;slotselect
+/dtbo_b                  emmc     /dev/block/by-name/dtbo_b          	flags=display=dtbo_b;slotselect
+
+# VBMeta partitions
+/vbmeta                  emmc     /dev/block/by-name/vbmeta          	flags=display=vbmeta
+/vbmeta_system_a         emmc     /dev/block/by-name/vbmeta_system_a 	flags=display=vbmeta_system_a;slotselect;avb=vbmeta_system_a
+/vbmeta_system_b         emmc     /dev/block/by-name/vbmeta_system_b 	flags=display=vbmeta_system_b;slotselect;avb=vbmeta_system_b
+/vbmeta_vendor_a         emmc     /dev/block/by-name/vbmeta_vendor_a 	flags=display=vbmeta_vendor_a;slotselect;avb=vbmeta_vendor_a
+/vbmeta_vendor_b         emmc     /dev/block/by-name/vbmeta_vendor_b 	flags=display=vbmeta_vendor_b;slotselect;avb=vbmeta_vendor_b
+
+# Logos / misc raw
+/logo                    emmc     /dev/block/by-name/logo         		flags=display=logo
+/expdb                   emmc     /dev/block/by-name/expdb        		flags=display=expdb
+/seccfg                  emmc     /dev/block/by-name/seccfg       		flags=display=seccfg
+
+# Secure / TEE partitions
+/tee1                    emmc     /dev/block/by-name/tee1         		flags=display=tee1
+/tee2                    emmc     /dev/block/by-name/tee2         		flags=display=tee2
+/scp1                    emmc     /dev/block/by-name/scp1         		flags=display=scp1
+/scp2                    emmc     /dev/block/by-name/scp2         		flags=display=scp2
+/sspm_1                  emmc     /dev/block/by-name/sspm_1       		flags=display=sspm_1
+/sspm_2                  emmc     /dev/block/by-name/sspm_2       		flags=display=sspm_2
+/gz1                     emmc     /dev/block/by-name/gz1          		flags=display=gz1
+/gz2                     emmc     /dev/block/by-name/gz2          		flags=display=gz2
+/spmfw                   emmc     /dev/block/by-name/spmfw        		flags=display=spmfw
+
+# Boot parameters / DT
+/boot_para               emmc     /dev/block/by-name/boot_para    		flags=display=boot_para
+/odmdtbo                 emmc     /dev/block/by-name/odmdtbo      		flags=display=odmdtbo
+/dtbo                    emmc     /dev/block/by-name/dtbo         		flags=display=dtbo

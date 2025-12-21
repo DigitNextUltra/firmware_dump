@@ -1,0 +1,22 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.bootimage.brand=Digit
+ro.product.bootimage.device=Digitnext_Ultra
+ro.product.bootimage.manufacturer=digit
+ro.product.bootimage.model=Digitnext_Ultra
+ro.product.bootimage.name=twrp_Digitnext_Ultra
+ro.bootimage.build.date=Sun Dec 21 01:35:09 PKT 2025
+ro.bootimage.build.date.utc=1766262909
+ro.bootimage.build.fingerprint=Digit/Digitnext_Ultra/Digitnext_Ultra:12/SP1A.210812.016/1704853980:user/release-keys
+ro.bootimage.build.id=SP2A.220405.004
+ro.bootimage.build.tags=test-keys
+ro.bootimage.build.type=eng
+ro.bootimage.build.version.incremental=eng.inscru.20251221.013545
+ro.bootimage.build.version.release=13
+ro.bootimage.build.version.release_or_codename=13
+ro.bootimage.build.version.sdk=32
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file
